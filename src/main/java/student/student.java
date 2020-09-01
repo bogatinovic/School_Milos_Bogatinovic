@@ -48,7 +48,12 @@ public class Student {
     this.firstName = customName;
     this.lastName = customLastName;
     this.yearOfBirth =customYearOfBirth;
-            }
+    }
     
+    public void info() {
+        System.out.println("First name: " + this.getFirstName());
+        System.out.println("Last name: " + this.getLastName());
+        System.out.println("Year of birth: " + this.getYearOfBirth());
+    }
     
 }
