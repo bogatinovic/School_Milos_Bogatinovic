@@ -5,6 +5,9 @@
  */
 package student;
 
+import Computer.Computer;
+import Course.Course;
+
 /**
  *
  * @author Bogi
@@ -13,7 +16,45 @@ public class Student {
     private String firstName;
     private String lastName;
     private int yearOfBirth;
+    
+    private Computer computer;
+    private Course course;
+    
+    
+    public Student(){
+    this.firstName = "Milos";
+    this.lastName = "Bogatinovic";
+    this.yearOfBirth = 1983;
+    this.course = new Course();
+    this.computer = new Computer();
+    } 
+    
+    public Student(String customName, String customLastName, int customYearOfBirth, Course course, Computer computer) {
+    this.firstName = customName;
+    this.lastName = customLastName;
+    this.yearOfBirth =customYearOfBirth;
+    this.computer = computer;
+    this.course = course;
+    }
 
+    public Computer getComputer() {
+        return computer;
+    }
+
+    public void setComputer(Computer computer) {
+        this.computer = computer;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+    
+    
+    
     public String getFirstName() {
         return firstName;
     }
@@ -37,23 +78,20 @@ public class Student {
     public void setYearOfBirth(int yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
     }
-
-    public Student(){
-    this.firstName = "Milos";
-    this.lastName = "Bogatinovic";
-    this.yearOfBirth = 1983;
-    } 
     
-    public Student(String customName, String customLastName, int customYearOfBirth) {
-    this.firstName = customName;
-    this.lastName = customLastName;
-    this.yearOfBirth =customYearOfBirth;
-    }
+    
+
+       
     
     public void info() {
-        System.out.println("First name: " + this.getFirstName());
-        System.out.println("Last name: " + this.getLastName());
-        System.out.println("Year of birth: " + this.getYearOfBirth());
-    }
+        System.out.println("First name: " + getFirstName());
+        System.out.println("Last name: " + getLastName());
+        System.out.println("Year of birth: " + getYearOfBirth());
+        System.out.println("Course name: " + getCourse().getClass());
+        System.out.println("Couse number of classes: " + getCourse().getNumberOfClasses());
+        System.out.println("Process tact: " + getComputer().getProcessTact());
+        System.out.println("Memory: " + getComputer().getMemory());
+        System.out.println("Hard drive: " + getComputer().getMemory());
+                }
     
 }

@@ -13,6 +13,8 @@ public class Course {
     private String name;
     private int numberOfClasses;
     private String codeName;
+    
+    
 
     public String getName() {
         return name;
